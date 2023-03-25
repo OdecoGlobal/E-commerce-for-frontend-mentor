@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Kumbh Sans;
+  background-color: hsl(0, 0%, 100%);
+
+  /* padding: 20px 50px; */
+}
+header {
+  margin-top: 10px;
+  width: 85vw;
+  height: 15vh;
+  margin: 5px auto 80px;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 1px 2px hsl(220, 14%, 75%);
+  /* overflow: hidden; */
+  object-fit: contain;
+}
+nav {
+  display: flex;
+  /* margin-right: 50px; */
+  padding-top: 16px;
+  align-items: center;
+}
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  margin-right: 50px;
+  margin-left: 5px;
+}
+ul {
+  list-style-type: none;
+  display: flex;
+}
+li {
+  margin-left: 10px;
+  font-size: 0.8em;
+  color: hsl(220, 14%, 75%);
+  font-weight: 400;
+}
+nav img {
+  position: absolute;
+}
+.cart-1 {
+  width: 20px;
+  object-fit: contain;
+  left: 80%;
+}
+.display-pics {
+  width: 30px;
+  object-fit: contain;
+  left: 90%;
+  /* margin-right: 1000px; */
+}
+.hero {
+  display: inline-block;
+  margin-right: auto;
+}
+
+.hero img {
+  width: 35vw;
+  margin-left: 30%;
+  border-radius: 10px;
+}
+article {
+  position: absolute;
+  left: 60%;
+  top: 30%;
+  /* background-color: aqua; */
+  width: 430px;
+  height: 300px;
+  /* margin-right: 20px; */
+}
+.heading {
+  color: hsl(26, 100%, 55%);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.subtitle {
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+.copy {
+  color: hsl(219, 9%, 45%);
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+.current-price {
+  font-size: 20px;
+  font-weight: 700;
+}
+.percent-discount {
+  position: absolute;
+  left: 110px;
+  top: 79%;
+  background-color: hsl(25, 100%, 94%);
+  color: hsl(26, 100%, 55%);
+  width: 30px;
+  font-size: 12px;
+  font-weight: 700;
+
+  text-align: center;
+}
+.original-price {
+  font-size: 12px;
+}
+
+#minus-icon,
+#plus-icon {
+  width: 10px;
+  display: inline-block;
+}
