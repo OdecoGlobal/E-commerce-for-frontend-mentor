@@ -107,6 +107,9 @@ article {
 }
 .original-price {
   font-size: 12px;
+  text-decoration: line-through;
+  color: hsl(219, 9%, 45%);
+  font-weight: 700;
 }
 
 #minus-icon,
