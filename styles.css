@@ -138,3 +138,56 @@ article {
   width: 10px;
   display: inline-block;
 }
+
+#shop {
+  background-color: hsl(26, 100%, 55%);
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 10px;
+  display: flex;
+  position: absolute;
+  right: 33%;
+  top: 92%;
+}
+.cart-buy {
+  width: 50px;
+  object-fit: contain;
+
+  color: white;
+}
+.buy {
+  color: hsl(0, 0%, 100%);
+  font-size: 10px;
+}
+
+.thumnail {
+  width: 35vw;
+  margin: 25px 11% 100px;
+  border-radius: 10px;
+
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  /* display: inline-block; */
+}
+.thumnail:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(26, 100%, 55%);
+  opacity: 0;
+  transition: opacity o.3s ease;
+}
+.thumnail img {
+  width: 96px;
+  height: auto;
+  object-fit: contain;
+  /* margin-right: 20px; */
+  border-radius: 10px;
+}
