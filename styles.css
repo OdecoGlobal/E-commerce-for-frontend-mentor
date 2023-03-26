@@ -36,8 +36,8 @@ ul {
   display: flex;
 }
 li {
-  margin-left: 10px;
-  font-size: 0.8em;
+  margin-left: 30px;
+  font-size: 1em;
   color: hsl(220, 14%, 75%);
   font-weight: 400;
 }
@@ -46,6 +46,7 @@ nav img {
 }
 .cart-1 {
   width: 20px;
+
   object-fit: contain;
   left: 80%;
 }
@@ -68,7 +69,7 @@ nav img {
 article {
   position: absolute;
   left: 60%;
-  top: 30%;
+  top: 40%;
   /* background-color: aqua; */
   width: 430px;
   height: 300px;
@@ -77,7 +78,7 @@ article {
 .heading {
   color: hsl(26, 100%, 55%);
   font-size: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .subtitle {
   font-size: 32px;
@@ -96,7 +97,7 @@ article {
 .percent-discount {
   position: absolute;
   left: 110px;
-  top: 79%;
+  top: 83%;
   background-color: hsl(25, 100%, 94%);
   color: hsl(26, 100%, 55%);
   width: 30px;
@@ -146,16 +147,15 @@ article {
   margin-top: 10px;
   border-radius: 10px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   right: 33%;
-  top: 92%;
-}
-.cart-buy {
-  width: 50px;
-  object-fit: contain;
+  top: 100%;
 
-  color: white;
+  align-items: center;
 }
+
 .buy {
   color: hsl(0, 0%, 100%);
   font-size: 10px;
@@ -173,21 +173,34 @@ article {
   position: relative;
   /* display: inline-block; */
 }
-.thumnail:hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: hsl(26, 100%, 55%);
-  opacity: 0;
-  transition: opacity o.3s ease;
-}
+
 .thumnail img {
   width: 96px;
   height: auto;
   object-fit: contain;
   /* margin-right: 20px; */
   border-radius: 10px;
+}
+.thumnail img:hover {
+  /* background-color: hsla(26, 100%, 55%, 0.2); */
+  /* opacity: 0.2; */
+  filter: opacity(25%);
+  border: 2px solid hsl(26, 100%, 55%);
+  /* border-color: ; */
+}
+.shopping-cart {
+  max-width: 25px;
+  /* vertical-align: right; */
+  margin-right: 10px;
+  height: auto;
+  display: block;
+  float: right;
+  /* display: block; */
+  margin: 0;
+  stroke: hsl(0, 0%, 100%);
+  fill: hsl(0, 0%, 100%);
+}
+#shop p {
+  color: hsl(0, 0%, 100%);
+  margin-left: 10px;
 }
