@@ -19,24 +19,38 @@
     />
   </head>
   <body>
+    <div class="overlay"></div>
     <header>
       <nav>
+        <img src="./images/icon-menu.svg" alt="burger-menu" class="menu" />
         <h1 class="logo">sneakers</h1>
 
-        <ul>
+        <ul class="nav-menu">
+          <li id="close-icon">
+            <img
+              src="./images/icon-close.svg"
+              alt="nav close button"
+              class="close"
+            />
+          </li>
           <li id="collections">Collections</li>
           <li id="men">Men</li>
           <li id="women">Women</li>
           <li id="about">About</li>
           <li id="contact">Contact</li>
         </ul>
-
-        <img src="./images/icon-cart.svg" alt="cart-icon" class="cart cart-1" />
-        <img
-          src="./images/image-avatar.png"
-          alt="display-pics"
-          class="display-pics"
-        />
+        <div class="cart-profile">
+          <img
+            src="./images/icon-cart.svg"
+            alt="cart-icon"
+            class="cart cart-1"
+          />
+          <img
+            src="./images/image-avatar.png"
+            alt="display-pics"
+            class="display-pics"
+          />
+        </div>
       </nav>
     </header>
     <section class="hero">

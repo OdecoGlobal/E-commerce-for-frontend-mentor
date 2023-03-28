@@ -6,31 +6,34 @@
 body {
   font-family: Kumbh Sans;
   background-color: hsl(0, 0%, 100%);
-
-  /* padding: 20px 50px; */
 }
 header {
   width: 85vw;
-  height: 15vh;
-  margin: 10px auto 80px;
+  height: 12vh;
+  margin: 10px auto 30px;
   background-color: hsl(0, 0%, 100%);
   box-shadow: 0 1px 2px hsl(220, 14%, 75%);
-  /* overflow: hidden; */
   object-fit: contain;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.menu,
+.close {
+  display: none;
 }
 nav {
   display: flex;
-
-  padding-top: 16px;
   align-items: center;
 }
 .logo {
-  font-size: 32px;
+  font-size: 38px;
   font-weight: 700;
   margin-right: 50px;
+  text-align: center;
   margin-left: 5px;
 }
-ul {
+.nav-menu {
   list-style-type: none;
   display: flex;
   justify-content: center;
@@ -42,20 +45,22 @@ li {
   color: hsl(220, 14%, 75%);
   font-weight: 400;
 }
-nav img {
+.cart-profile {
+  width: 80px;
   position: absolute;
+  right: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .cart-1 {
   width: 20px;
 
   object-fit: contain;
-  left: 80%;
 }
 .display-pics {
   width: 30px;
   object-fit: contain;
-  left: 90%;
-  /* margin-right: 1000px; */
 }
 .hero {
   width: 85vw;
@@ -63,22 +68,14 @@ nav img {
   max-height: max-content;
   display: flex;
   justify-content: center;
-  align-items: center;
-  /* margin: 0 auto 0; */
+  margin-left: 100px;
+  /* align-items: center; */
 }
 
-.product-img {
+.sneakers {
   display: flex;
   flex-direction: column;
-  margin-right: 100px;
-}
-
-.copy-cart {
-  display: flex;
-  flex-direction: column;
-}
-
-.hero img {
+  margin-right: 120px;
   width: 450px;
   height: auto;
   border-radius: 20px;
@@ -96,36 +93,49 @@ nav img {
   width: 95px;
   height: auto;
   border-radius: 10px;
-  border: 2px solid hsla(0, 0%, 100%);
-
-  /* transition: border-color 0.3 ease opacity 0.3 ease; */
+  border: 3px solid hsla(0, 0%, 100%);
 }
 
 .thumbnail img:hover {
   border-color: hsla(26, 100%, 55%, 1);
-  /* filter: opacity(25%); */
-  opacity: 0.5;
+  filter: opacity(25%);
+  /* opacity: 0.5; */
+}
+.copy-cart {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 500px;
+  height: 450px;
+  padding-top: 50px;
+  justify-content: space-between;
 }
 
 .heading {
   color: hsl(26, 100%, 55%);
-  font-size: 12px;
-  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  word-spacing: 4px;
 }
 
 .subtitle {
-  font-size: 32px;
-  margin-bottom: 30px;
+  font-size: 40px;
   font-weight: 700;
+  word-spacing: 5px;
+  letter-spacing: 1.5px;
+  width: 100%;
 }
 
 .copy {
   color: hsl(219, 9%, 45%);
   line-height: 1.5;
-  margin-bottom: 25px;
+  width: 100%;
+  letter-spacing: 1px;
+  /* word-spacing: 1px; */
 }
 .discounted-amt {
-  width: 7em;
+  width: 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -133,41 +143,40 @@ nav img {
 }
 
 .current-price {
-  font-size: 20px;
+  font-size: 32px;
   font-weight: 700;
+  letter-spacing: 2px;
 }
 .percent-discount {
   background-color: hsl(25, 100%, 94%);
   color: hsl(26, 100%, 55%);
-  width: 30px;
-  font-size: 12px;
+  padding: 3px;
+  width: 45px;
+  height: fit-content;
+  font-size: 16px;
   font-weight: 700;
-
   text-align: center;
 }
 
 .original-price {
-  font-size: 12px;
+  font-size: 16px;
   text-decoration: line-through;
-  color: hsl(219, 9%, 45%);
+  color: hsla(219, 9%, 45%, 0.5);
   font-weight: 700;
 }
 
-.price {
-  margin-bottom: 30px;
-}
 .add-to-cart {
   display: flex;
+  justify-content: space-between;
 }
 .btn-counter {
   display: flex;
   justify-content: space-between;
   padding: 10px 5px;
   background-color: hsla(220, 14%, 75%, 0.2);
-  width: 150px;
+  width: 200px;
   height: 40px;
   border-radius: 10px;
-  margin-right: 20px;
 }
 .count-change {
   flex: 1;
@@ -185,6 +194,7 @@ nav img {
   height: auto;
   display: inline-block;
   vertical-align: middle;
+  cursor: pointer;
 }
 
 .button {
@@ -194,10 +204,11 @@ nav img {
   background-color: hsl(26, 100%, 55%);
   color: white;
   text-align: center;
-  font-size: 16px;
+  word-spacing: 2px;
+  font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  width: 200px;
+  width: 250px;
   height: 40px;
   border-radius: 10px;
 }
@@ -211,4 +222,115 @@ nav img {
 .button span {
   display: inline-block;
   vertical-align: middle;
+}
+
+@media (max-width: 450px) {
+  * {
+    margin: 0;
+  }
+  header {
+    margin: 0;
+    width: 100vw;
+    height: 10vh;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .menu,
+  .close {
+    display: block;
+  }
+  .menu {
+    margin-right: 16px;
+  }
+  .nav-menu {
+    width: 65vw;
+    height: 100vh;
+    background-color: hsl(0, 0%, 100%);
+    padding-top: 20px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  li {
+    margin-bottom: 25px;
+    font-size: 20px;
+    color: hsl(0, 0%, 0%);
+    font-weight: 700;
+  }
+  #close-icon {
+    margin-bottom: 50px;
+  }
+  .cart-profile {
+    right: 5%;
+  }
+
+  .hero {
+    flex-direction: column;
+    width: 100vw;
+    margin: 0;
+  }
+
+  .sneakers {
+    border-radius: 0;
+    width: 100vw;
+    height: auto;
+    margin-bottom: 0;
+  }
+
+  .thumbnail {
+    display: none;
+  }
+  .copy-cart {
+    width: 100vw;
+    height: auto;
+    /* background-color: blue; */
+    margin-top: 20px;
+    padding: 0 20px 150px;
+    /* padding-bottom: 150px; */
+    letter-spacing: 0;
+    word-spacing: 0;
+  }
+  .heading {
+    /* letter-spacing: 0px; */
+    word-spacing: 0px;
+    margin-bottom: 20px;
+  }
+  .subtitle {
+    font-size: 32px;
+    letter-spacing: 0;
+    word-spacing: 0;
+    margin-bottom: 25px;
+  }
+  .copy {
+    letter-spacing: 0;
+    word-spacing: 0;
+    margin-bottom: 20px;
+  }
+
+  .add-to-cart {
+    flex-direction: column;
+    margin-right: 10px;
+  }
+  .btn-counter,
+  .button {
+    width: 90vw;
+    height: 50px;
+  }
+  .btn-counter {
+    margin-bottom: 20px;
+    height: 50px;
+  }
+  .original-price {
+    margin: 20px;
+    font-size: 16px;
+  }
 }
