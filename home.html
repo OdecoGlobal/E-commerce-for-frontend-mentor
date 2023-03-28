@@ -40,11 +40,19 @@
       </nav>
     </header>
     <section class="hero">
-      <img
-        src="./images/image-product-1.jpg"
-        alt="sneaker"
-        class="sneakers sneaker-1"
-      />
+      <div class="product-img">
+        <img
+          src="./images/image-product-1.jpg"
+          alt="sneaker"
+          class="sneakers sneaker-1"
+        />
+        <div class="thumbnail">
+          <img src="./images/image-product-1-thumbnail.jpg" />
+          <img src="./images/image-product-2-thumbnail.jpg" />
+          <img src="./images/image-product-3-thumbnail.jpg" />
+          <img src="./images/image-product-4-thumbnail.jpg" />
+        </div>
+      </div>
       <!--  
       <img
         src="./images/image-product-2.jpg"
@@ -61,7 +69,7 @@
         alt="sneaker"
         class="sneakers sneaker-4"
       /> -->
-      <article>
+      <div class="copy-cart">
         <h3 class="heading">SNEAKER COMPANY</h3>
         <h1 class="subtitle">Fall Limited Edition <br />Sneakers</h1>
 
@@ -86,24 +94,18 @@
           <li id="counter"><p class="counter">0</p></li>
           <li id="add"><img src="./images/icon-plus.svg" id="plus-icon" /></li>
         </ul>
-        <!-- <section id="shop"> -->
-        <!-- <img src="./images/icon-cart.svg" class="cart-buy" /> -->
-        <div id="shop">
+
+        <button class="button">
           <img
             src="./images/icon-cart.svg"
             alt="shopping cart"
             class="shopping-cart"
           />
-          <p>Add to cart</p>
-        </div>
-        <!-- </section> -->
-      </article>
+          <span>Add to cart</span>
+        </button>
+      </div>
+      /article>
     </section>
-    <section class="thumnail">
-      <img src="./images/image-product-1-thumbnail.jpg" />
-      <img src="./images/image-product-2-thumbnail.jpg" />
-      <img src="./images/image-product-3-thumbnail.jpg" />
-      <img src="./images/image-product-4-thumbnail.jpg" />
-    </section>
+    <section class="thumnail"></section>
   </body>
 </html>
