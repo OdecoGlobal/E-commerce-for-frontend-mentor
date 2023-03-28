@@ -79,33 +79,39 @@
           <br />withstand everything the weather can offer
         </p>
         <section class="price">
-          <p class="current-price">$125.00</p>
-          <p class="percent-discount">50%</p>
+          <div class="discounted-amt">
+            <p class="current-price">$125.00</p>
+            <p class="percent-discount">50%</p>
+          </div>
           <p class="original-price">$250.00</p>
         </section>
-        <ul class="add-to-cart">
-          <li id="minus">
-            <img
-              src="./images/icon-minus.svg"
-              alt="minus-icon"
-              id="minus-icon"
-            />
-          </li>
-          <li id="counter"><p class="counter">0</p></li>
-          <li id="add"><img src="./images/icon-plus.svg" id="plus-icon" /></li>
-        </ul>
+        <section class="add-to-cart">
+          <div class="btn-counter">
+            <div class="count-change">
+              <img
+                src="./images/icon-minus.svg"
+                alt="minus-icon"
+                id="minus-icon"
+              />
+            </div>
 
-        <button class="button">
-          <img
-            src="./images/icon-cart.svg"
-            alt="shopping cart"
-            class="shopping-cart"
-          />
-          <span>Add to cart</span>
-        </button>
+            <div class="count-change counter">0</div>
+            <!-- <span class="">0</span> -->
+            <div class="count-change">
+              <img src="./images/icon-plus.svg" id="plus-icon" />
+            </div>
+          </div>
+
+          <button class="button">
+            <img
+              src="./images/icon-cart.svg"
+              alt="shopping cart"
+              class="shopping-cart"
+            />
+            <span>Add to cart</span>
+          </button>
+        </section>
       </div>
-      /article>
     </section>
-    <section class="thumnail"></section>
   </body>
 </html>

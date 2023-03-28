@@ -10,10 +10,9 @@ body {
   /* padding: 20px 50px; */
 }
 header {
-  margin-top: 10px;
   width: 85vw;
   height: 15vh;
-  margin: 5px auto 80px;
+  margin: 10px auto 80px;
   background-color: hsl(0, 0%, 100%);
   box-shadow: 0 1px 2px hsl(220, 14%, 75%);
   /* overflow: hidden; */
@@ -21,7 +20,7 @@ header {
 }
 nav {
   display: flex;
-  /* margin-right: 50px; */
+
   padding-top: 16px;
   align-items: center;
 }
@@ -34,6 +33,8 @@ nav {
 ul {
   list-style-type: none;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 li {
   margin-left: 30px;
@@ -57,16 +58,19 @@ nav img {
   /* margin-right: 1000px; */
 }
 .hero {
+  width: 85vw;
   min-height: 100vh;
   max-height: max-content;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* margin: 0 auto 0; */
 }
 
 .product-img {
   display: flex;
   flex-direction: column;
+  margin-right: 100px;
 }
 
 .copy-cart {
@@ -75,57 +79,32 @@ nav img {
 }
 
 .hero img {
-  width: 35vw;
-  margin-left: 30%;
-  border-radius: 10px;
+  width: 450px;
+  height: auto;
+  border-radius: 20px;
 }
 
 .thumbnail {
-  max-width: 35vw;
-  margin: 25px 11% 100px;
-  border-radius: 10px;
-  background-color: black;
+  width: 450px;
+  height: auto;
   margin-top: 25px;
   display: flex;
-  /* align-items: center;
-  justify-content: space-evenly;
-  position: relative; */
+  justify-content: space-between;
 }
 
 .thumbnail img {
-  width: 96px;
+  width: 95px;
   height: auto;
-  object-fit: contain;
-
   border-radius: 10px;
+  border: 2px solid hsla(0, 0%, 100%);
+
+  /* transition: border-color 0.3 ease opacity 0.3 ease; */
 }
 
-.button {
-  display: inline-block;
-  padding: 10px 5px;
-  border: none;
-  background-color: hsl(26, 100%, 55%);
-  color: white;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  width: 200px;
-  height: 40px;
-  /* margin-top: 10px; */
-  border-radius: 10px;
-}
-
-.button img {
-  display: inline-block;
-  vertical-align: middle;
-  /* margin-right: 5px; */
-  width: 20px;
-  height: 20px;
-}
-.button span {
-  display: inline-block;
-  vertical-align: middle;
+.thumbnail img:hover {
+  border-color: hsla(26, 100%, 55%, 1);
+  /* filter: opacity(25%); */
+  opacity: 0.5;
 }
 
 .heading {
@@ -145,22 +124,19 @@ nav img {
   line-height: 1.5;
   margin-bottom: 25px;
 }
+.discounted-amt {
+  width: 7em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
 .current-price {
   font-size: 20px;
   font-weight: 700;
 }
-/* background-color: aqua; */
-/* width: 430px;
-  height: 300px; */
-/* margin-right: 20px; */
-/* } */
-/* 
-
 .percent-discount {
-  position: absolute;
-  left: 110px;
-  top: 83%;
   background-color: hsl(25, 100%, 94%);
   color: hsl(26, 100%, 55%);
   width: 30px;
@@ -169,6 +145,7 @@ nav img {
 
   text-align: center;
 }
+
 .original-price {
   font-size: 12px;
   text-decoration: line-through;
@@ -180,16 +157,21 @@ nav img {
   margin-bottom: 30px;
 }
 .add-to-cart {
-  list-style-type: none;
+  display: flex;
 }
-#minus,
-#counter,
-#add {
-  width: 25px;
-  height: 30px;
-  background-color: hsl(223, 64%, 98%);
-  margin-left: 0;
-  border-radius: 1.5px;
+.btn-counter {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px;
+  background-color: hsla(220, 14%, 75%, 0.2);
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+.count-change {
+  flex: 1;
+  text-align: center;
 }
 
 .counter {
@@ -199,42 +181,34 @@ nav img {
 }
 #minus-icon,
 #plus-icon {
-  width: 10px;
+  width: 12px;
+  height: auto;
   display: inline-block;
+  vertical-align: middle;
 }
 
-#shop {
+.button {
+  display: inline-block;
+  padding: 10px 5px;
+  border: none;
   background-color: hsl(26, 100%, 55%);
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
   width: 200px;
   height: 40px;
-  margin-top: 10px;
   border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: 33%;
-  top: 100%;
-
-  align-items: center;
 }
 
-.buy {
-  color: hsl(0, 0%, 100%);
-  font-size: 10px;
+.button img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: auto;
 }
-
- */
-
-/* 
-.thumnail img:hover { 
- 
-  filter: opacity(25%);
-  border: 2px solid hsl(26, 100%, 55%);
- 
-} */
-
-#shop p {
-  color: hsl(0, 0%, 100%);
-  margin-left: 10px;
+.button span {
+  display: inline-block;
+  vertical-align: middle;
 }
