@@ -5,7 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="styles.css" rel="stylesheet" />
-    <title>Sneakers</title>
+    <title>Frontend Mentor | E-commerce product page</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
     <!-- <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5>.8.2/css/all.css"
@@ -19,7 +25,7 @@
     />
   </head>
   <body>
-    <div class="overlay"></div>
+    <div class="overlay hidden"></div>
     <header>
       <nav>
         <img src="./images/icon-menu.svg" alt="burger-menu" class="menu" />
@@ -40,11 +46,14 @@
           <li id="contact">Contact</li>
         </ul>
         <div class="cart-profile">
-          <img
-            src="./images/icon-cart.svg"
-            alt="cart-icon"
-            class="cart cart-1"
-          />
+          <div class="num-checkout">
+            <img
+              src="./images/icon-cart.svg"
+              alt="cart-icon"
+              class="cart cart-1"
+            />
+            <p class="checkout-amt hidden">0</p>
+          </div>
           <img
             src="./images/image-avatar.png"
             alt="display-pics"
@@ -53,13 +62,61 @@
         </div>
       </nav>
     </header>
+    <section class="card hidden">
+      <h4 class="checkout-card">Cart</h4>
+
+      <p class="cart-empty hidden">Your cart is empty</p>
+      <div class="cart-filled hidden">
+        <div class="cart-description">
+          <img
+            src="./images/image-product-1-thumbnail.jpg"
+            alt="Icon of bought item"
+            class="shopped-icon"
+          />
+          <div class="shopped-description">
+            <p class="shopped-name">Fall Limited Edition Sneakers</p>
+            <div class="amount">
+              <p class="amt-rate">
+                $125.00 x <span class="total-carted">3</span>
+                <span class="gross-total">$375.00</span>
+              </p>
+            </div>
+          </div>
+
+          <img
+            src="./images/icon-delete.svg"
+            alt="delete icon"
+            class="delete-icon"
+          />
+        </div>
+        <button class="checkout">Checkout</button>
+      </div>
+    </section>
     <section class="hero">
       <div class="product-img">
-        <img
-          src="./images/image-product-1.jpg"
-          alt="sneaker"
-          class="sneakers sneaker-1"
-        />
+        <div class="main-img">
+          <img
+            src="./images/image-product-1.jpg"
+            alt="sneaker"
+            class="sneakers sneaker-1"
+          />
+          <div class="directions">
+            <div class="direction">
+              <img
+                src="./images/icon-previous.svg"
+                alt="previous icon"
+                class="dir-icon prev-icon"
+              />
+            </div>
+            <div class="direction">
+              <img
+                src="./images/icon-next.svg"
+                alt="next icon"
+                class="dir-icon next-icon"
+              />
+            </div>
+          </div>
+        </div>
         <div class="thumbnail">
           <img src="./images/image-product-1-thumbnail.jpg" />
           <img src="./images/image-product-2-thumbnail.jpg" />
@@ -88,16 +145,18 @@
         <h1 class="subtitle">Fall Limited Edition <br />Sneakers</h1>
 
         <p class="copy">
-          These low-profile sneakers are your perfect casual wear
-          <br />companion. Featuring a durable rubber outer sole they'll
-          <br />withstand everything the weather can offer
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole they'll withstand everything the
+          weather can offer
         </p>
         <section class="price">
-          <div class="discounted-amt">
-            <p class="current-price">$125.00</p>
+          <div class="discount">
+            <div class="discounted-amt">
+              <p class="current-price">$125.00</p>
+              <p class="original-price">$250.00</p>
+            </div>
             <p class="percent-discount">50%</p>
           </div>
-          <p class="original-price">$250.00</p>
         </section>
         <section class="add-to-cart">
           <div class="btn-counter">
