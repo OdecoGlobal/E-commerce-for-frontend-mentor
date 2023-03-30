@@ -558,9 +558,6 @@ div.orange-border:hover::before {
   ul.nav-menu {
     display: none;
   }
-  menu:active + ul.nav-menu {
-    display: flex;
-  }
 
   #close-icon {
     margin-bottom: 70px;
