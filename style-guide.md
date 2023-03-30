@@ -4,7 +4,7 @@
 
 The designs were created to the following widths:
 
-- Mobile: 375px
+- Mobile: 500px
 - Desktop: 1440px
 
 ## Colors
@@ -26,6 +26,9 @@ The designs were created to the following widths:
 - Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%)
 
 ## Typography
+
+-logo font size: 38px
+-navigation text 18px
 
 ### Body Copy
 
