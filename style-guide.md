@@ -12,6 +12,7 @@ The designs were created to the following widths:
 ### Primary
 
 - Orange: hsl(26, 100%, 55%)
+- filter: invert(55%) sepia(23%) saturate(3184%) hue-rotate(348deg) brightness(102%) contrast(101%);
 - Pale orange: hsl(25, 100%, 94%)
 
 ### Neutral
@@ -21,6 +22,7 @@ The designs were created to the following widths:
 - Grayish blue: hsl(220, 14%, 75%)
 - Light grayish blue: hsl(223, 64%, 98%)
 - White: hsl(0, 0%, 100%)
+- filter: brightness(0) invert(1)
 - Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%)
 
 ## Typography

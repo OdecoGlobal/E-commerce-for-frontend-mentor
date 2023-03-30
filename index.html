@@ -2,40 +2,249 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
+    <link href="styles.css" rel="stylesheet" />
+    <title>Frontend Mentor | E-commerce product page</title>
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
-    <title>Frontend Mentor | E-commerce product page</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <!-- <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5>.8.2/css/all.css"
+    /> -->
+    <script src="https:??kit.font-awesome.com/b67af64a54.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    Collections Men Women About Contact Sneaker Company Fall Limited Edition
-    Sneakers These low-profile sneakers are your perfect casual wear companion.
-    Featuring a durable rubber outer sole, they’ll withstand everything the
-    weather can offer. $125.00 50% $250.00 0 Add to cart
+    <div class="overlay hidden"></div>
+    <header>
+      <nav>
+        <img src="./images/icon-menu.svg" alt="burger-menu" class="menu" />
+        <h1 class="logo">sneakers</h1>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+        <ul class="nav-menu">
+          <li id="close-icon">
+            <img
+              src="./images/icon-close.svg"
+              alt="nav close button"
+              class="close"
+            />
+          </li>
+          <li id="collections">Collections</li>
+          <li id="men">Men</li>
+          <li id="women">Women</li>
+          <li id="about">About</li>
+          <li id="contact">Contact</li>
+        </ul>
+        <div class="cart-profile">
+          <div class="num-checkout">
+            <img
+              src="./images/icon-cart.svg"
+              alt="cart-icon"
+              class="cart cart-1"
+            />
+            <p class="checkout-amt hidden">0</p>
+          </div>
+          <img
+            src="./images/image-avatar.png"
+            alt="display-pics"
+            class="display-pics"
+          />
+        </div>
+      </nav>
+    </header>
+    <section class="card hidden">
+      <h4 class="checkout-card">Cart</h4>
+
+      <p class="cart-empty hidden">Your cart is empty</p>
+      <div class="cart-filled hidden">
+        <div class="cart-description">
+          <img
+            src="./images/image-product-1-thumbnail.jpg"
+            alt="Icon of bought item"
+            class="shopped-icon"
+          />
+          <div class="shopped-description">
+            <p class="shopped-name">Fall Limited Edition Sneakers</p>
+            <div class="amount">
+              <p class="amt-rate">
+                $125.00 x <span class="total-carted">3</span>
+                <span class="gross-total">$375.00</span>
+              </p>
+            </div>
+          </div>
+
+          <img
+            src="./images/icon-delete.svg"
+            alt="delete icon"
+            class="delete-icon"
+          />
+        </div>
+        <button class="checkout">Checkout</button>
+      </div>
+    </section>
+    <section class="hero">
+      <div class="product-img">
+        <div class="main-img">
+          <img
+            src="./images/image-product-1.jpg"
+            alt="sneaker"
+            class="sneakers-product sneakers"
+          />
+          <div class="directions main-direction">
+            <div class="direction">
+              <img
+                src="./images/icon-previous.svg"
+                alt="previous icon"
+                class="dir-icon"
+                id="prev-icon"
+              />
+            </div>
+            <div class="direction">
+              <img
+                src="./images/icon-next.svg"
+                alt="next icon"
+                class="dir-icon"
+                id="next-icon"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="thumbnail">
+          <div class="orange-border">
+            <img src="./images/image-product-1-thumbnail.jpg" />
+          </div>
+          <div class="orange-border">
+            <img src="./images/image-product-2-thumbnail.jpg" />
+          </div>
+          <div class="orange-border">
+            <img src="./images/image-product-3-thumbnail.jpg" />
+          </div>
+          <div class="orange-border">
+            <img src="./images/image-product-4-thumbnail.jpg" />
+          </div>
+        </div>
+      </div>
+      <!--  
+      <img
+        src="./images/image-product-2.jpg"
+        alt="sneaker"
+        class="sneakers sneaker-2"
+      />
+      <img
+        src="./images/image-product-3.jpg"
+        alt="sneaker"
+        class="sneakers sneaker-3"
+      />
+      <img
+        src="./images/image-product-4.jpg"
+        alt="sneaker"
+        class="sneakers sneaker-4"
+      /> -->
+      <div class="copy-cart">
+        <h3 class="heading">SNEAKER COMPANY</h3>
+        <h1 class="subtitle">Fall Limited Edition <br />Sneakers</h1>
+
+        <p class="copy">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole they'll withstand everything the
+          weather can offer
+        </p>
+        <section class="price">
+          <div class="discount">
+            <div class="discounted-amt">
+              <p class="current-price">$125.00</p>
+              <p class="original-price">$250.00</p>
+            </div>
+            <p class="percent-discount">50%</p>
+          </div>
+        </section>
+        <section class="add-to-cart">
+          <div class="btn-counter">
+            <div class="count-change">
+              <img
+                src="./images/icon-minus.svg"
+                alt="minus-icon"
+                id="minus-icon"
+              />
+            </div>
+
+            <div class="count-change counter">0</div>
+            <!-- <span class="">0</span> -->
+            <div class="count-change">
+              <img src="./images/icon-plus.svg" id="plus-icon" />
+            </div>
+          </div>
+
+          <button class="button">
+            <img
+              src="./images/icon-cart.svg"
+              alt="shopping cart"
+              class="shopping-cart"
+            />
+            <span>Add to cart</span>
+          </button>
+        </section>
+      </div>
+    </section>
+
+    <div class="popped-img hidden">
+      <div class="popped-img-icon">
+        <div class="popped-img-container">
+          <img
+            src="./images/image-product-1.jpg"
+            alt="pop-up"
+            class="popped-pics sneakers"
+          />
+        </div>
+        <img
+          src="./images/icon-close.svg"
+          alt="close pop-up"
+          class="pop-close"
+        />
+        <div class="popped-icon directions">
+          <div class="direction">
+            <img
+              src="./images/icon-previous.svg"
+              alt="previous icon"
+              class="dir-icon"
+              id="prev-icon"
+            />
+          </div>
+          <div class="direction">
+            <img
+              src="./images/icon-next.svg"
+              alt="next icon"
+              class="dir-icon"
+              id="next-icon"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="thumbnail pop-thumbnail">
+        <div class="orange-border">
+          <img src="./images/image-product-1-thumbnail.jpg" />
+        </div>
+        <div class="orange-border">
+          <img src="./images/image-product-2-thumbnail.jpg" />
+        </div>
+        <div class="orange-border">
+          <img src="./images/image-product-3-thumbnail.jpg" />
+        </div>
+        <div class="orange-border">
+          <img src="./images/image-product-4-thumbnail.jpg" />
+        </div>
+      </div>
     </div>
   </body>
 </html>
