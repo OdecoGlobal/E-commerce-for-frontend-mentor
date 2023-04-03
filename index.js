@@ -3,7 +3,14 @@ const burgerMenu = document.querySelector('.menu');
 const navbar = document.querySelector('ul.nav-menu');
 const closeNav = document.querySelector('.close');
 const overlay = document.querySelector('.overlay');
+const nextBtn = document.querySelector('.next-icon');
+const prevBtn = document.querySelector('.prev-icon');
+const sneakerSlide = document.querySelectorAll('.pop-sneakers');
+const sneakerShow = document.querySelector('.sneaker-main');
+const popImg = document.querySelector('.popped-img');
+const popClose = document.querySelector('.pop-close');
 
+//Event Listeners
 burgerMenu.addEventListener('click', function () {
   navbar.style.display = 'block';
   overlay.classList.remove('hidden');
@@ -14,10 +21,20 @@ closeNav.addEventListener('click', function () {
   overlay.classList.add('hidden');
 });
 
+// show pop-up
+sneakerShow.addEventListener('click', function () {
+  popImg.style.display = 'flex';
+  overlay.classList.remove('hidden');
+});
+
+//close pop
+popClose.addEventListener('click', function () {
+  popImg.style.display = 'none';
+  overlay.classList.add('hidden');
+});
+
 //changing slides
-const nextBtn = document.querySelector('.next-icon');
-const prevBtn = document.querySelector('.prev-icon');
-const sneakerSlide = document.querySelectorAll('.pop-sneakers');
+
 let currentSlide = 0;
 
 const showSlide = function () {

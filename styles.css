@@ -508,6 +508,9 @@ div.orange-border:hover::before {
 .active {
   display: block;
 }
+.popped-img {
+  display: none;
+}
 
 .hidden {
   display: none;
