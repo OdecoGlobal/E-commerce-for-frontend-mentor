@@ -227,8 +227,6 @@ div.main-img {
 }
 
 .sneakers {
-  /* width: 450px;
-  height: auto; */
   position: absolute;
   top: 0;
   left: 0;
@@ -237,22 +235,14 @@ div.main-img {
   display: none;
   border-radius: 10px;
 }
-.active {
-  display: block;
-}
 
 .directions {
   /* padding: 0 15px 0; */
   position: absolute;
   top: 50%;
-
   width: 100%;
   display: flex;
   justify-content: space-between;
-}
-
-.main-direction {
-  display: none;
 }
 
 .direction {
@@ -282,7 +272,6 @@ div.main-img {
   height: 100vh;
   position: absolute;
   top: 12%;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -290,7 +279,7 @@ div.main-img {
   z-index: 1;
 }
 
-.popped-img-icon {
+div.popped-img-icon {
   width: 500px;
   height: 500px;
   /* overflow: hidden; */
@@ -312,8 +301,8 @@ div.main-img {
   left: 0;
   position: absolute;
 }
-.active {
-  display: block;
+.pop-thumbnail img {
+  width: 90px;
 }
 
 .pop-close {
@@ -368,9 +357,6 @@ div.orange-border:hover::before {
   border: 2px solid hsl(26, 100%, 55%);
 }
 
-.pop-thumbnail img {
-  width: 90px;
-}
 .copy-cart {
   display: flex;
   flex-direction: column;
@@ -519,6 +505,10 @@ div.orange-border:hover::before {
   filter: opacity(65%);
 }
 
+.active {
+  display: block;
+}
+
 .hidden {
   display: none;
 }
@@ -539,9 +529,7 @@ div.orange-border:hover::before {
     align-items: center;
     position: static;
   }
-  .popped-img {
-    display: none;
-  }
+
   .menu,
   .close {
     display: block;
@@ -563,8 +551,6 @@ div.orange-border:hover::before {
     position: absolute;
     top: 0;
     left: 0;
-
-    /* opacity: 100%; */
     z-index: 2;
   }
 
@@ -636,16 +622,29 @@ div.orange-border:hover::before {
     margin: 0;
   }
 
-  div.main-img {
+  .product-img {
+    display: none;
+  }
+  .popped-img {
+    position: static;
+    z-index: 0;
+    margin: 0;
+    display: block;
+    height: 420px;
+  }
+  div.popped-img-icon {
     position: relative;
     width: 100vw;
   }
+
+  .pop-close {
+    display: none;
+  }
+
   .directions {
     padding: 0 15px 0;
     position: absolute;
-    top: 40%;
-    opacity: 100%;
-
+    top: 35%;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -664,7 +663,7 @@ div.orange-border:hover::before {
   .copy-cart {
     width: 100vw;
     height: auto;
-    margin-top: 20px;
+    margin-top: 0px;
     padding: 0 20px 150px;
     letter-spacing: 0;
     word-spacing: 0;
@@ -672,7 +671,7 @@ div.orange-border:hover::before {
 
   .heading {
     word-spacing: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   .subtitle {

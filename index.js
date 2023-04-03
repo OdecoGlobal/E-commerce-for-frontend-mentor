@@ -17,7 +17,7 @@ closeNav.addEventListener('click', function () {
 //changing slides
 const nextBtn = document.querySelector('.next-icon');
 const prevBtn = document.querySelector('.prev-icon');
-const sneakerSlide = document.querySelectorAll('.sneakers');
+const sneakerSlide = document.querySelectorAll('.pop-sneakers');
 let currentSlide = 0;
 
 const showSlide = function () {
