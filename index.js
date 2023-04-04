@@ -41,6 +41,8 @@ const showSlide = function () {
   sneakerSlide.forEach(sneaker => sneaker.classList.remove('active'));
   sneakerSlide[currentSlide].classList.add('active');
 };
+
+showSlide(0);
 const nextSneaker = function () {
   currentSlide = (currentSlide + 1) % sneakerSlide.length;
   showSlide();
@@ -51,3 +53,11 @@ const prevSneaker = function () {
 };
 nextBtn.addEventListener('click', nextSneaker);
 prevBtn.addEventListener('click', prevSneaker);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'ArrowLeft' && popImg.style.display !== 'none') prevSneaker();
+});
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'ArrowRight' && popImg.style.display !== 'none') nextSneaker();
+});
