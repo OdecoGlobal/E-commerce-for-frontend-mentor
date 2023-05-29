@@ -31,11 +31,11 @@ closeNav.addEventListener('click', function () {
 //     overlay.classList.remove('hidden');
 //   });
 // });
-
-//close pop
-popClose.addEventListener('click', function () {
-  popImg.style.display = 'none';
-  overlay.classList.add('hidden');
+sneakerShow.forEach((sneaker, i) => {
+  sneaker.addEventListener('click', function () {
+    popImg.style.display = 'flex';
+    overlay.classList.remove('hidden');
+  });
 });
 
 // changing orangeborder
@@ -49,11 +49,17 @@ orangeBorder.forEach((thumbnail, i) => {
       image.classList.remove('active');
     });
     sneaker[i].classList.add('active');
-    sneaker[i].addEventListener('click', function () {
-      popImg.style.display = 'flex';
-      overlay.classList.remove('hidden');
-    });
+    // sneaker[i].addEventListener('click', function () {
+    //   popImg.style.display = 'flex';
+    //   overlay.classList.remove('hidden');
+    // });
   });
+});
+
+//close pop
+popClose.addEventListener('click', function () {
+  popImg.style.display = 'none';
+  overlay.classList.add('hidden');
 });
 
 //changing slides
