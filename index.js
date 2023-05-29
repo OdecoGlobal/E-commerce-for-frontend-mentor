@@ -6,9 +6,12 @@ const overlay = document.querySelector('.overlay');
 const nextBtn = document.querySelector('.next-icon');
 const prevBtn = document.querySelector('.prev-icon');
 const sneakerSlide = document.querySelectorAll('.pop-sneakers');
-const sneakerShow = document.querySelector('.sneaker-main');
+const sneakerShow = document.querySelectorAll('.sneaker-main');
+const sneaker = document.querySelectorAll('.sneakers');
 const popImg = document.querySelector('.popped-img');
 const popClose = document.querySelector('.pop-close');
+const orangeBorder = document.querySelectorAll('.orange-border');
+const sneakerThumbnail = document.querySelectorAll('.sneaker-thumbnail');
 
 //Event Listeners
 burgerMenu.addEventListener('click', function () {
@@ -22,10 +25,12 @@ closeNav.addEventListener('click', function () {
 });
 
 // show pop-up
-sneakerShow.addEventListener('click', function () {
-  popImg.style.display = 'flex';
-  overlay.classList.remove('hidden');
-});
+// sneakerShow.forEach(sneaker => {
+//   sneaker.addEventListener('click', function () {
+//     popImg.style.display = 'flex';
+//     overlay.classList.remove('hidden');
+//   });
+// });
 
 //close pop
 popClose.addEventListener('click', function () {
@@ -33,8 +38,25 @@ popClose.addEventListener('click', function () {
   overlay.classList.add('hidden');
 });
 
-//changing slides
+// changing orangeborder
+orangeBorder.forEach((thumbnail, i) => {
+  thumbnail.addEventListener('click', function () {
+    orangeBorder.forEach(function (thumbnail) {
+      thumbnail.classList.remove('active');
+    });
+    this.classList.add('active');
+    sneaker.forEach(image => {
+      image.classList.remove('active');
+    });
+    sneaker[i].classList.add('active');
+    sneaker[i].addEventListener('click', function () {
+      popImg.style.display = 'flex';
+      overlay.classList.remove('hidden');
+    });
+  });
+});
 
+//changing slides
 let currentSlide = 0;
 
 const showSlide = function () {
