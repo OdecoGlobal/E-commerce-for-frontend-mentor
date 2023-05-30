@@ -10,7 +10,8 @@ const sneakerShow = document.querySelectorAll('.sneaker-main');
 const sneaker = document.querySelectorAll('.sneakers');
 const popImg = document.querySelector('.popped-img');
 const popClose = document.querySelector('.pop-close');
-const orangeBorder = document.querySelectorAll('.orange-border');
+const orangeBorder = document.querySelectorAll('.main-thumbnail');
+const orangePopBorder = document.querySelectorAll('.pop-border');
 const sneakerThumbnail = document.querySelectorAll('.sneaker-thumbnail');
 
 //Event Listeners
@@ -24,38 +25,75 @@ closeNav.addEventListener('click', function () {
   overlay.classList.add('hidden');
 });
 
+const popswitch = function () {
+  orangePopBorder.forEach(function (thumbnail) {
+    thumbnail.classList.remove('active');
+  });
+  this.classList.add('active');
+
+  sneakerSlide.forEach(image => {
+    image.classList.remove('active');
+  });
+  sneakerSlide[i].classList.add('active');
+};
 // show pop-up
-// sneakerShow.forEach(sneaker => {
-//   sneaker.addEventListener('click', function () {
-//     popImg.style.display = 'flex';
-//     overlay.classList.remove('hidden');
-//   });
-// });
-sneakerShow.forEach((sneaker, i) => {
+
+const popActive = function () {
+  popImg.style.display = 'flex';
+  overlay.classList.remove('hidden');
+};
+
+// changing orangeborder
+
+const switchMainBorder = function () {
+  orangeBorder.forEach((thumbnail, i) => {
+    thumbnail.addEventListener('click', function () {
+      orangeBorder.forEach(function (thumbnail) {
+        thumbnail.classList.remove('active');
+      });
+      this.classList.add('active');
+
+      sneakerShow.forEach(image => {
+        image.classList.remove('active');
+      });
+      sneakerShow[i].classList.add('active');
+    });
+  });
+};
+switchMainBorder();
+
+const switchPopBorder = function () {
+  orangePopBorder.forEach((thumbnail, i) => {
+    thumbnail.addEventListener('click', function () {
+      orangePopBorder.forEach(function (thumbnail) {
+        thumbnail.classList.remove('active');
+      });
+      this.classList.add('active');
+
+      sneakerSlide.forEach(image => {
+        image.classList.remove('active');
+      });
+      sneakerSlide[i].classList.add('active');
+    });
+  });
+};
+switchPopBorder();
+
+sneakerShow.forEach(sneaker => {
   sneaker.addEventListener('click', function () {
     popImg.style.display = 'flex';
     overlay.classList.remove('hidden');
   });
 });
 
-// changing orangeborder
-orangeBorder.forEach((thumbnail, i) => {
-  thumbnail.addEventListener('click', function () {
-    orangeBorder.forEach(function (thumbnail) {
-      thumbnail.classList.remove('active');
-    });
-    this.classList.add('active');
-    sneaker.forEach(image => {
-      image.classList.remove('active');
-    });
-    sneaker[i].classList.add('active');
-    // sneaker[i].addEventListener('click', function () {
-    //   popImg.style.display = 'flex';
-    //   overlay.classList.remove('hidden');
-    // });
+sneakerShow.forEach((sneaker, i) => {
+  sneaker.addEventListener('click', function () {
+    popActive();
+    switchPopBorder();
+    sneakerSlide.forEach(s => s.classList.remove('active'));
+    sneakerSlide[i].classList.add('active');
   });
 });
-
 //close pop
 popClose.addEventListener('click', function () {
   popImg.style.display = 'none';
@@ -64,10 +102,18 @@ popClose.addEventListener('click', function () {
 
 //changing slides
 let currentSlide = 0;
+let currentPop = 0;
 
 const showSlide = function () {
   sneakerSlide.forEach(sneaker => sneaker.classList.remove('active'));
   sneakerSlide[currentSlide].classList.add('active');
+};
+
+const showPoporange = function () {
+  orangePopBorder.forEach(function (thumbnail) {
+    thumbnail.classList.remove('active');
+  });
+  this.classList.add('active');
 };
 
 showSlide(0);
@@ -79,6 +125,15 @@ const prevSneaker = function () {
   currentSlide = (currentSlide - 1 + sneakerSlide.length) % sneakerSlide.length;
   showSlide();
 };
+const arrSwitchNext = function () {
+  currentPop = (currentPop + 1) % orangePopBorder.length;
+  showPoporange();
+};
+const nextArr = function () {
+  nextSneaker();
+  arrSwitchNext();
+};
+
 nextBtn.addEventListener('click', nextSneaker);
 prevBtn.addEventListener('click', prevSneaker);
 
