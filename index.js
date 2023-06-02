@@ -14,6 +14,17 @@ const orangeBorder = document.querySelectorAll('.main-thumbnail');
 const orangePopBorder = document.querySelectorAll('.pop-border');
 const sneakerThumbnail = document.querySelectorAll('.sneaker-thumbnail');
 const amtSneaker = document.querySelector('.counter');
+const btnMinus = document.getElementById('minus_icon');
+const btnPlus = document.getElementById('plus_icon');
+const btnCart = document.querySelector('.btn--cart');
+const amtCheckout = document.querySelector('.checked-amt');
+const totalCart = document.querySelector('.total-carted');
+const iconCart = document.getElementById('cart-icon');
+const empCart = document.querySelector('.cart-empty');
+const cardCart = document.querySelector('.card');
+const fillCart = document.querySelector('.cart-filled');
+const total = document.querySelector('.amt-total');
+const btnDelete = document.querySelector('.delete-icon');
 
 //Event Listeners
 burgerMenu.addEventListener('click', function () {
@@ -145,39 +156,30 @@ document.addEventListener('keydown', function (e) {
 // cart
 // amtSneaker.textContent = 20;
 let counter = Number(amtSneaker.textContent);
-console.log(counter);
-const btnMinus = document.getElementById('minus_icon');
-const btnPlus = document.getElementById('plus_icon');
-const btnCart = document.querySelector('.btn--cart');
-const amtCheckout = document.querySelector('.checked-amt');
-const totalCart = document.querySelector('.total-carted');
-const iconCart = document.getElementById('cart-icon');
-const empCart = document.querySelector('.cart-empty');
-const cardCart = document.querySelector('.card');
-const fillCart = document.querySelector('.cart-filled');
-const total = document.querySelector('.amt-total');
-const btnDelete = document.querySelector('.delete-icon');
 
 let checkoutNum = Number(amtCheckout.textContent);
 console.log(checkoutNum);
 
 btnMinus.addEventListener('click', function (e) {
   e.preventDefault();
-  if (counter >= 0) {
-    amtSneaker.textContent = counter--;
+  if (counter > 0) {
+    amtSneaker.textContent = --counter;
   }
 });
+
 btnPlus.addEventListener('click', function () {
   amtSneaker.textContent = ++counter;
-  console.log(counter);
 });
+
 btnCart.addEventListener('click', function (e) {
   e.preventDefault();
-  amtCheckout.textContent = totalCart.textContent =
-    Number(amtCheckout.textContent) + Number(amtSneaker.textContent);
+  if (counter > 0) {
+    amtCheckout.textContent = totalCart.textContent =
+      Number(amtCheckout.textContent) + Number(amtSneaker.textContent);
 
-  amtSneaker.textContent = counter = 0;
-  total.textContent = Number(amtCheckout.textContent) * 125;
+    amtSneaker.textContent = counter = 0;
+    total.textContent = Number(amtCheckout.textContent) * 125;
+  }
 });
 
 iconCart.addEventListener('click', function () {
