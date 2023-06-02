@@ -8,6 +8,7 @@ body {
   background-color: hsl(0, 0%, 100%);
   max-width: 100vw;
   max-height: 100vh;
+  /* overflow: hidden; */
 }
 .overlay {
   width: 100%;
@@ -22,7 +23,7 @@ body {
 header {
   width: 85vw;
   height: 16vh;
-  margin: 0 auto 30px;
+  margin: 10px auto 30px;
   background-color: hsl(0, 0%, 100%);
   box-shadow: 0 1px 2px hsl(220, 14%, 75%);
   object-fit: contain;
@@ -202,6 +203,9 @@ section .checkout-card {
   width: 12px;
   object-fit: contain;
 }
+.delete-icon:hover {
+  cursor: pointer;
+}
 
 .hero {
   width: 85vw;
@@ -355,9 +359,6 @@ div.orange-border:hover::before {
   opacity: 0.5;
   cursor: pointer;
 }
-/* .orange-border:hover {
-  border: 2px solid hsl(26, 100%, 55%);
-} */
 
 div.orange-border.active::before {
   content: '';
@@ -475,16 +476,16 @@ div.orange-border.active {
   text-align: center;
   font-weight: 700;
 }
-#minus-icon,
-#plus-icon {
+#minus_icon,
+#plus_icon {
   width: 12px;
   height: auto;
   display: inline-block;
   vertical-align: middle;
 }
 
-#minus-icon:hover,
-#plus-icon:hover {
+#minus_icon:hover,
+#plus_icon:hover {
   opacity: 80%;
   cursor: pointer;
 }

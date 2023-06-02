@@ -13,6 +13,7 @@ const popClose = document.querySelector('.pop-close');
 const orangeBorder = document.querySelectorAll('.main-thumbnail');
 const orangePopBorder = document.querySelectorAll('.pop-border');
 const sneakerThumbnail = document.querySelectorAll('.sneaker-thumbnail');
+const amtSneaker = document.querySelector('.counter');
 
 //Event Listeners
 burgerMenu.addEventListener('click', function () {
@@ -79,7 +80,7 @@ const switchPopBorder = function () {
 };
 switchPopBorder();
 
-sneakerShow.forEach(sneaker => {
+const showPop = sneakerShow.forEach(sneaker => {
   sneaker.addEventListener('click', function () {
     popImg.style.display = 'flex';
     overlay.classList.remove('hidden');
@@ -92,6 +93,9 @@ sneakerShow.forEach((sneaker, i) => {
     switchPopBorder();
     sneakerSlide.forEach(s => s.classList.remove('active'));
     sneakerSlide[i].classList.add('active');
+
+    orangePopBorder.forEach(t => t.classList.remove('active'));
+    orangePopBorder[i].classList.add('active');
   });
 });
 //close pop
@@ -107,40 +111,88 @@ let currentPop = 0;
 const showSlide = function () {
   sneakerSlide.forEach(sneaker => sneaker.classList.remove('active'));
   sneakerSlide[currentSlide].classList.add('active');
+  orangePopBorder.forEach(t => t.classList.remove('active'));
+  orangePopBorder[currentPop].classList.add('active');
 };
 
-const showPoporange = function () {
-  orangePopBorder.forEach(function (thumbnail) {
-    thumbnail.classList.remove('active');
-  });
-  this.classList.add('active');
-};
-
-showSlide(0);
+showSlide();
 const nextSneaker = function () {
   currentSlide = (currentSlide + 1) % sneakerSlide.length;
+  currentPop = (currentPop + 1) % orangePopBorder.length;
+
   showSlide();
 };
 const prevSneaker = function () {
   currentSlide = (currentSlide - 1 + sneakerSlide.length) % sneakerSlide.length;
+  currentPop =
+    (currentPop - 1 + orangePopBorder.length) % orangePopBorder.length;
   showSlide();
-};
-const arrSwitchNext = function () {
-  currentPop = (currentPop + 1) % orangePopBorder.length;
-  showPoporange();
-};
-const nextArr = function () {
-  nextSneaker();
-  arrSwitchNext();
 };
 
 nextBtn.addEventListener('click', nextSneaker);
 prevBtn.addEventListener('click', prevSneaker);
 
 document.addEventListener('keydown', function (e) {
+  e.preventDefault();
   if (e.key === 'ArrowLeft' && popImg.style.display !== 'none') prevSneaker();
 });
 
 document.addEventListener('keydown', function (e) {
+  e.preventDefault();
   if (e.key === 'ArrowRight' && popImg.style.display !== 'none') nextSneaker();
+});
+
+// cart
+// amtSneaker.textContent = 20;
+let counter = Number(amtSneaker.textContent);
+console.log(counter);
+const btnMinus = document.getElementById('minus_icon');
+const btnPlus = document.getElementById('plus_icon');
+const btnCart = document.querySelector('.btn--cart');
+const amtCheckout = document.querySelector('.checked-amt');
+const totalCart = document.querySelector('.total-carted');
+const iconCart = document.getElementById('cart-icon');
+const empCart = document.querySelector('.cart-empty');
+const cardCart = document.querySelector('.card');
+const fillCart = document.querySelector('.cart-filled');
+const total = document.querySelector('.amt-total');
+const btnDelete = document.querySelector('.delete-icon');
+
+let checkoutNum = Number(amtCheckout.textContent);
+console.log(checkoutNum);
+
+btnMinus.addEventListener('click', function (e) {
+  e.preventDefault();
+  if (counter >= 0) {
+    amtSneaker.textContent = counter--;
+  }
+});
+btnPlus.addEventListener('click', function () {
+  amtSneaker.textContent = ++counter;
+  console.log(counter);
+});
+btnCart.addEventListener('click', function (e) {
+  e.preventDefault();
+  amtCheckout.textContent = totalCart.textContent =
+    Number(amtCheckout.textContent) + Number(amtSneaker.textContent);
+
+  amtSneaker.textContent = counter = 0;
+  total.textContent = Number(amtCheckout.textContent) * 125;
+});
+
+iconCart.addEventListener('click', function () {
+  cardCart.classList.toggle('hidden');
+  if (checkoutNum === 0) {
+    empCart.classList.remove('hidden');
+  }
+  if (amtCheckout.textContent > 0) {
+    empCart.classList.add('hidden');
+    fillCart.classList.remove('hidden');
+  }
+});
+
+btnDelete.addEventListener('click', function () {
+  amtCheckout.textContent = totalCart.textContent = 0;
+  empCart.classList.remove('hidden');
+  fillCart.classList.add('hidden');
 });
