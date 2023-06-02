@@ -158,7 +158,6 @@ document.addEventListener('keydown', function (e) {
 let counter = Number(amtSneaker.textContent);
 
 let checkoutNum = Number(amtCheckout.textContent);
-
 btnMinus.addEventListener('click', function (e) {
   e.preventDefault();
   if (counter > 0) {
@@ -192,7 +191,7 @@ const handleClick = function () {
   }
 };
 iconCart.addEventListener('click', handleClick);
-iconCart.addEventListener('touchend', handleClick);
+// iconCart.addEventListener('touchend', handleClick);
 
 btnDelete.addEventListener('click', function () {
   amtCheckout.textContent = totalCart.textContent = 0;
