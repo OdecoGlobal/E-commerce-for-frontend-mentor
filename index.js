@@ -198,5 +198,5 @@ btnDelete.addEventListener('click', function () {
   amtCheckout.textContent = totalCart.textContent = 0;
   cardCart.classList.add('hidden');
   amtCheckout.classList.add('hidden');
-  // fillCart.classList.add('hidden');
+  fillCart.classList.add('hidden');
 });

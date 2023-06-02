@@ -602,8 +602,9 @@ div.orange-border.active {
   .card {
     width: 95vw;
     height: 300px;
-    top: 12%;
+    top: 10%;
     left: 2.5%;
+    z-index: 10;
   }
   .cart-filled {
     padding: 25px 15px 5px;
