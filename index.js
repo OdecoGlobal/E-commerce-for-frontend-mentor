@@ -17,7 +17,7 @@ const amtSneaker = document.querySelector('.counter');
 const btnMinus = document.getElementById('minus_icon');
 const btnPlus = document.getElementById('plus_icon');
 const btnCart = document.querySelector('.btn--cart');
-const amtCheckout = document.querySelector('.checked-amt');
+const amtCheckout = document.querySelector('.checkout-amt');
 const totalCart = document.querySelector('.total-carted');
 const iconCart = document.getElementById('cart-icon');
 const empCart = document.querySelector('.cart-empty');
@@ -174,6 +174,7 @@ btnPlus.addEventListener('click', function () {
 btnCart.addEventListener('click', function (e) {
   e.preventDefault();
   if (counter > 0) {
+    amtCheckout.classList.remove('hidden');
     amtCheckout.textContent = totalCart.textContent =
       Number(amtCheckout.textContent) + Number(amtSneaker.textContent);
 
@@ -195,6 +196,7 @@ iconCart.addEventListener('click', function () {
 
 btnDelete.addEventListener('click', function () {
   amtCheckout.textContent = totalCart.textContent = 0;
-  empCart.classList.remove('hidden');
-  fillCart.classList.add('hidden');
+  cardCart.classList.add('hidden');
+  amtCheckout.classList.add('hidden');
+  // fillCart.classList.add('hidden');
 });
