@@ -158,7 +158,6 @@ document.addEventListener('keydown', function (e) {
 let counter = Number(amtSneaker.textContent);
 
 let checkoutNum = Number(amtCheckout.textContent);
-console.log(checkoutNum);
 
 btnMinus.addEventListener('click', function (e) {
   e.preventDefault();
@@ -182,8 +181,7 @@ btnCart.addEventListener('click', function (e) {
     total.textContent = Number(amtCheckout.textContent) * 125;
   }
 });
-
-iconCart.addEventListener('click', function () {
+const handleClick = function () {
   cardCart.classList.toggle('hidden');
   if (checkoutNum === 0) {
     empCart.classList.remove('hidden');
@@ -192,11 +190,14 @@ iconCart.addEventListener('click', function () {
     empCart.classList.add('hidden');
     fillCart.classList.remove('hidden');
   }
-});
+};
+iconCart.addEventListener('click', handleClick);
+iconCart.addEventListener('touchend', handleClick);
 
 btnDelete.addEventListener('click', function () {
   amtCheckout.textContent = totalCart.textContent = 0;
-  cardCart.classList.add('hidden');
+  // cardCart.classList.add('hidden');
+  empCart.classList.remove('hidden');
   amtCheckout.classList.add('hidden');
   fillCart.classList.add('hidden');
 });
